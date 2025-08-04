@@ -4,25 +4,6 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import useParallax from "@/hooks/useParallax"
-import pets from '@/public/assets/elements/pets.gif'
-import heart6 from '@/public/assets/elements/heart6.gif'
-import cheersSecondary from '@/public/assets/elements/cheers-secondary.gif'
-import mainImage from '@/public/assets/main.jpg'
-import first from '@/public/assets/gallery/1.jpg'
-import second from '@/public/assets/gallery/2.jpg'
-import third from '@/public/assets/gallery/3.jpg'
-import fourth from '@/public/assets/gallery/4.jpg'
-import fifth from '@/public/assets/gallery/5.jpg'
-import sixth from '@/public/assets/gallery/6.jpg'
-import seventh from '@/public/assets/gallery/7.jpg'
-import barong from '@/public/assets/barong.png'
-import guests from '@/public/assets/guests.png'
-import plate from '@/public/assets/elements/plate.gif'
-import dress from '@/public/assets/elements/dress.gif'
-import cheers2 from '@/public/assets/elements/cheers-new.gif'
-import rings from '@/public/assets/elements/rings.gif'
-import cake from '@/public/assets/elements/cake.gif'
-import note from '@/public/assets/elements/note.gif'
 
 export default function ScrollSPA() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -62,33 +43,33 @@ export default function ScrollSPA() {
       >
         <motion.div style={{ y: bottomRight }} className='flex flex-col items-center justify-between py-40 relative gap-6 overflow-hidden w-full h-svh text-center'>
           {/* top center */}
-          <Image src={pets} alt="heart" className='size-62 absolute -top-5 left-1/2 -translate-x-1/2' />
+          <Image src='/assets/elements/pets.gif' width={248} height={248} alt="heart" className='size-62 absolute -top-5 left-1/2 -translate-x-1/2' />
 
           <h1 className='text-2xl line-clamp-2 font-normal'>we're getting <br /> married!!!</h1>
           <div className='relative w-full max-w-max'>
             <h1 className='font-cabin-sketch text-7xl font-bold'>bry + shai</h1>
 
             {/* small top of "b" */}
-            {/* <Image src={heart6} alt="heart" className='size-12 absolute -top-7 -left-5' /> */}
+            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 -left-5' /> */}
             {/* small top of "b" */}
 
             {/* small top of "r" */}
-            <Image src={heart6} alt="heart" className='size-12 absolute -top-7 left-8' />
+            <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 left-8' />
 
             {/* small below of "a" */}
-            <Image src={heart6} alt="heart" className='size-12 absolute top-17 right-5' />
+            <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute top-17 right-5' />
 
 
             {/* small top of "i" */}
-            {/* <Image src={heart6} alt="heart" className='size-12 absolute -top-7 -right-8' /> */}
+            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 -right-8' /> */}
             {/* small top of "i" */}
 
             {/* medium heart bottom of "b" */}
-            {/* <Image src={heart6} alt="heart" className='size-24 absolute -bottom-15 -left-12' /> */}
+            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-24 absolute -bottom-15 -left-12' /> */}
             {/* medium heart bottom of "b" */}
 
             {/* medium heart bottom of "i" */}
-            {/* <Image src={heart6} alt="heart" className='size-24 absolute -bottom-15 -right-15' /> */}
+            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-24 absolute -bottom-15 -right-15' /> */}
             {/* medium heart bottom of "i" */}
           </div>
           <p className='flex flex-col items-center gap-0 text-md'>
@@ -101,29 +82,29 @@ export default function ScrollSPA() {
           <div className='absolute top-0 left-0 w-full h-full pointer-events-none'>
             {/* top left */}
             <motion.div style={{ y: topLeft }} className='size-40 absolute top-0 left-0'>
-              <Image src={heart6} alt="heart" className="size-full" />
+              <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className="size-full" />
             </motion.div>
 
             {/* top right */}
             <motion.div style={{ y: topRight }} className='size-22 absolute top-4 right-3'>
-              <Image src={heart6} alt="heart" className="size-full" />
+              <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className="size-full" />
             </motion.div>
 
 
             <motion.div style={{ y: bottomRight }} className='size-52 absolute bottom-4 -right-12'>
-              <Image src={heart6} alt="heart" className="size-full" />
+              <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className="size-full" />
             </motion.div>
             <motion.div style={{ y: bottomLeft }} className='size-40 absolute -bottom-4 left-1'>
-              <Image src={heart6} alt="heart" className="size-full" />
+              <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className="size-full" />
             </motion.div>
           </div>
-          <Image src={cheersSecondary} alt="cheers" className='size-56 absolute -bottom-10 left-1/2 -translate-x-1/2' />
+          <Image src='/assets/elements/cheers-secondary.gif' alt="cheers" className='size-56 absolute -bottom-10 left-1/2 -translate-x-1/2' width={248} height={248} />
         </motion.div>
         <div className="sticky top-0 py-40 w-full flex items-center justify-center">
           <div className="text-center z-10 space-y-8">
             <motion.div style={{ scale: imageScale, opacity: imageOpacity }} className="mx-auto">
               <Image
-                src={mainImage}
+                src='/assets/main.jpg'
                 alt="couple image"
                 width={768}
                 height={480}
@@ -141,16 +122,16 @@ export default function ScrollSPA() {
       >
         <div className="sticky top-0 h-screen overflow-hidden flex items-center">
           <motion.div style={{ x: horizontalX }} className="flex space-x-8 px-8 flex-shrink-0">
-            {[first, second, third, fourth, fifth, sixth, seventh].map((item) => (
+            {['/assets/gallery/1.jpg', '/assets/gallery/2.jpg', '/assets/gallery/3.jpg', '/assets/gallery/4.jpg', '/assets/gallery/5.jpg', '/assets/gallery/6.jpg', '/assets/gallery/7.jpg'].map((item, index) => (
               <motion.div
-                key={item.src}
+                key={item}
                 className="flex-shrink-0 w-80 h-96 bg-white/10 backdrop-blur-sm rounded-2xl flex flex-col justify-center items-center text-primary-blue "
                 whileHover={{ scale: 1.05, y: -10 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Image
                   src={item}
-                  alt={`gallery image ${item}`}
+                  alt={`gallery image ${index + 1}`}
                   width={768}
                   height={1080}
                   className="rounded-2xl shadow-2xl w-full object-cover"
@@ -304,7 +285,7 @@ export default function ScrollSPA() {
             <strong>ninongs and ninangs</strong>
             <span>barong and slacks/skirts</span>
 
-            <Image src={barong} alt="barong" className='w-svw aspect-auto' />
+            <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-svw aspect-auto' />
           </motion.div>
 
           <motion.div
@@ -320,7 +301,7 @@ export default function ScrollSPA() {
               <strong>boys:</strong> long / short sleeves polo and slacks (black, khaki, gray, white)
             </span>
 
-            <Image src={guests} alt="guests" className='w-full aspect-auto' />
+            <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-full aspect-auto' />
           </motion.div>
         </div>
       </section>
@@ -377,12 +358,12 @@ export default function ScrollSPA() {
           </motion.div>
 
           <div className='mt-20 relative w-full h-10 max-w-sm'>
-            <Image src={plate} alt="plate" className='size-42 absolute -top-14 -left-15' />
-            <Image src={dress} alt="dress" className='size-42 absolute -top-18 left-6' />
-            <Image src={cheers2} alt="cheers" className='size-42 absolute -top-15 left-24' />
-            <Image src={rings} alt="rings" className='size-28 absolute -top-5 right-22' />
-            <Image src={cake} alt="cake" className='size-32 absolute -top-8 right-2' />
-            <Image src={note} alt="note" className='size-24 absolute -top-2 -right-8' />
+            <Image width={248} height={248} src='/assets/elements/plate.gif' alt="plate" className='size-42 absolute -top-14 -left-15' />
+            <Image width={248} height={248} src='/assets/elements/dress.gif' alt="dress" className='size-42 absolute -top-18 left-6' />
+            <Image width={248} height={248} src='/assets/elements/cheers-new.gif' alt="cheers" className='size-42 absolute -top-15 left-24' />
+            <Image width={248} height={248} src='/assets/elements/rings.gif' alt="rings" className='size-28 absolute -top-5 right-22' />
+            <Image width={248} height={248} src='/assets/elements/cake.gif' alt="cake" className='size-32 absolute -top-8 right-2' />
+            <Image width={248} height={248} src='/assets/elements/note.gif' alt="note" className='size-24 absolute -top-2 -right-8' />
           </div>
         </div>
       </section>
