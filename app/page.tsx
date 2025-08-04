@@ -344,7 +344,7 @@ export default function ScrollSPA() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', duration: .6, delay: 1 }}
-            className='mt-6 flex flex-col items-center gap-2 text-primary-blue w-full'>
+            className='mt-4 flex flex-col items-center gap-2 text-primary-blue w-full'>
             <strong className='font-providence-sans relative'>
               rsvp
             </strong>
