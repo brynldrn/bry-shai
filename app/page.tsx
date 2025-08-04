@@ -122,7 +122,7 @@ export default function ScrollSPA() {
       >
         <div className="sticky top-0 h-screen overflow-hidden flex items-center">
           <motion.div style={{ x: horizontalX }} className="flex space-x-8 px-8 flex-shrink-0">
-            {['/assets/gallery/1.jpg', '/assets/gallery/2.jpg', '/assets/gallery/3.jpg', '/assets/gallery/4.jpg', '/assets/gallery/5.jpg', '/assets/gallery/6.jpg', '/assets/gallery/7.jpg'].map((item, index) => (
+            {['/assets/gallery/1.JPG', '/assets/gallery/2.jpg', '/assets/gallery/3.JPG', '/assets/gallery/4.JPG', '/assets/gallery/5.JPG', '/assets/gallery/6.JPG', '/assets/gallery/7.JPG'].map((item, index) => (
               <motion.div
                 key={item}
                 className="flex-shrink-0 w-80 h-96 bg-white/10 backdrop-blur-sm rounded-2xl flex flex-col justify-center items-center text-primary-blue "
@@ -141,8 +141,8 @@ export default function ScrollSPA() {
           </motion.div>
         </div>
 
-        <div className="absolute top-8 left-8 text-primary-blue z-10">
-          <h2 className="text-4xl font-bold mb-2 font-cabin-sketch">from "Hi!" to "I Do!"</h2>
+        <div className="absolute top-8 left-1/2 -translate-x-1/2 text-primary-blue z-10 text-center mx-auto">
+          <h2 className="text-4xl font-bold mb-2 font-cabin-sketch text-center">from "Hi!" to "I Do!"</h2>
         </div>
       </section>
 
@@ -258,10 +258,10 @@ export default function ScrollSPA() {
                 <span>Sedric Suringa</span>
                 <span>Ruffie Grace Esguerra</span>
                 <span>Janine Kyle Ledesma</span>
-                <span className='text-xs'>Samantha Julianne Mercado</span>
+                <span>Samantha Mercado</span>
                 <span>Nica Zenarosa</span>
-                <span className='text-sm'>James Edward Baldonado</span>
-                <span>Nathaniel Jovie Pineda</span>
+                <span>James Baldonado</span>
+                <span>Nathaniel Pineda</span>
                 <span>Ralph Siscar</span>
               </div>
             </motion.div>
