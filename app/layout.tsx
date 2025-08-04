@@ -6,7 +6,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'bry + shai Wedding',
+  title: 'bry + shai wedding',
   description: ''
 }
 
