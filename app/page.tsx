@@ -303,34 +303,37 @@ export default function ScrollSPA() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', duration: .6, delay: .6 }} className='flex flex-col items-center gap-2 text-primary-blue w-full'>
+            transition={{ type: 'spring', duration: .6, delay: .6 }} className='flex flex-col items-center gap-2 text-primary-blue w-full text-center justify-center'>
             <strong>ninongs and ninangs</strong>
-            <span>barong and slacks/skirts</span>
 
-            <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-svw aspect-auto max-w-2xl' />
+            <div className="w-full text-center">
+              <span>cream/beige barong dress / barong and slacks (ninong: black shoes) or skirt</span>
+            </div>
+
+            <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-full aspect-auto max-w-2xl' />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', duration: .6, delay: .7 }}
-            className='flex flex-col items-center gap-2 text-primary-blue w-svw'>
+            className='flex flex-col items-center gap-2 text-primary-blue w-svw px-2'>
             <strong>guests' dress code</strong>
             <span>
               please celebrate with us in vibrant colors! <br />
-              (strictly no white and black/dark attire) <br />
-              <strong>girls:</strong> long dresses, flowy, floral, and festive <br />
-              <strong>boys:</strong> long / short sleeves polo and slacks (black, khaki, gray, white)
+              (<strong>strictly no</strong> white and black/dark attire and denim pants) <br />
+              please wear long dresses, flowy, floral, and festive, <br />
+              long / short sleeves polo and slacks (black, khaki, gray, white)
             </span>
 
-            <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-full aspect-auto max-w-2xl' />
+            <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-5/6 aspect-auto max-w-2xl' />
           </motion.div>
         </div>
       </section>
 
       {/* next */}
       <section className="bg-secondary-blue relative z-1 font-providence-sans overflow-hidden pb-7">
-        <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center relative text-sm">
+        <div className="container mx-auto px-8 flex flex-col items-center gap-5 text-primary-blue text-center relative text-sm">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
