@@ -292,7 +292,7 @@ export default function ScrollSPA() {
       </section>
 
       {/* next */}
-      <section className="bg-secondary-blue relative z-1 pb-5 font-providence-sans">
+      <section className="bg-secondary-blue relative z-1 pb-10 font-providence-sans">
         <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center text-sm">
           <motion.strong
             initial={{ opacity: 0, y: 50 }}
