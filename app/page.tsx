@@ -375,7 +375,7 @@ export default function ScrollSPA() {
             </strong>
             <span className='text-sm'>
               Seats are set, cake is waiting. Hit us up by <br />
-              <strong>September 18</strong> if you're in for the vows, <br />
+              <strong>18 September</strong> if you're in for the vows, <br />
               the views, and the vibes! <br />
               p.s. your seat is locked in, just bring yourself&hellip; <br />
               and maybe a little something for us.
