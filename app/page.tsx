@@ -1,38 +1,77 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react"
 import Image from "next/image"
 import useParallax from "@/hooks/useParallax"
 
 export default function ScrollSPA() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const section1Ref = useRef<HTMLDivElement>(null)
-  const section2Ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll()
   const topLeft = useParallax(scrollYProgress, -40)
   const topRight = useParallax(scrollYProgress, 30)
   const bottomRight = useParallax(scrollYProgress, 10)
   const bottomLeft = useParallax(scrollYProgress, -20)
 
-  // Section 1 scroll progress (image scaling) - fixed offset calculation
-  const { scrollYProgress: section1Progress } = useScroll({
-    target: section1Ref,
-    offset: ["start start", "end start"],
+  const containerRef = useRef<HTMLDivElement>(null)
+  const section1Ref = useRef<HTMLDivElement>(null)
+  const section2Ref = useRef<HTMLDivElement>(null)
+
+  // Use motion values for better performance
+  const scrollY = useMotionValue(0)
+  const [windowHeight, setWindowHeight] = useState(0)
+
+  // Set up window height on mount
+  useEffect(() => {
+    const updateHeight = () => setWindowHeight(window.innerHeight)
+    updateHeight()
+    window.addEventListener("resize", updateHeight)
+    return () => window.removeEventListener("resize", updateHeight)
+  }, [])
+
+  // Optimized scroll tracking with throttling
+  useEffect(() => {
+    let ticking = false
+
+    const updateScrollY = () => {
+      scrollY.set(window.scrollY)
+      ticking = false
+    }
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollY)
+        ticking = true
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [scrollY])
+
+  // Section 1 progress - optimized calculation
+  const section1Progress = useTransform(scrollY, [0, windowHeight * 1.5], [0, 1])
+
+  // Section 2 progress - optimized calculation
+  const section2Progress = useTransform(scrollY, [windowHeight * 1.5, windowHeight * 4.5], [0, 1])
+
+  // Smooth spring animations for better feel
+  const imageScale = useSpring(useTransform(section1Progress, [0, 1], [0.3, 1]), {
+    stiffness: 100,
+    damping: 30,
+    mass: 0.8,
   })
 
-  // Section 2 scroll progress (horizontal scrolling) - extended scroll area
-  const { scrollYProgress: section2Progress } = useScroll({
-    target: section2Ref,
-    offset: ["start end", "end start"],
+  const imageOpacity = useSpring(useTransform(section1Progress, [0, 0.3, 1], [0.6, 0.9, 1]), {
+    stiffness: 150,
+    damping: 25,
   })
 
-  // Image scaling animation - properly mapped to scroll progress
-  const imageScale = useTransform(section1Progress, [0, 1], [0.3, 1])
-  const imageOpacity = useTransform(section1Progress, [0, 0.2, 1], [0.5, 0.8, 1])
-
-  // Horizontal scrolling animation - more controlled mapping
-  const horizontalX = useTransform(section2Progress, [0.1, 0.9], [0, -1400])
+  // Smooth horizontal scrolling with easing
+  const horizontalX = useSpring(useTransform(section2Progress, [0, 1], [0, -1200]), {
+    stiffness: 80,
+    damping: 25,
+    mass: 1,
+  })
 
   return (
     <div ref={containerRef} className="relative">
@@ -49,28 +88,11 @@ export default function ScrollSPA() {
           <div className='relative w-full max-w-max'>
             <h1 className='font-cabin-sketch text-7xl font-bold'>bry + shai</h1>
 
-            {/* small top of "b" */}
-            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 -left-5' /> */}
-            {/* small top of "b" */}
-
             {/* small top of "r" */}
             <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 left-8' />
 
             {/* small below of "a" */}
             <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute top-17 right-5' />
-
-
-            {/* small top of "i" */}
-            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute -top-7 -right-8' /> */}
-            {/* small top of "i" */}
-
-            {/* medium heart bottom of "b" */}
-            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-24 absolute -bottom-15 -left-12' /> */}
-            {/* medium heart bottom of "b" */}
-
-            {/* medium heart bottom of "i" */}
-            {/* <Image src='/assets/elements/heart6.gif' alt="heart" className='size-24 absolute -bottom-15 -right-15' /> */}
-            {/* medium heart bottom of "i" */}
           </div>
           <p className='flex flex-col items-center gap-0 text-md'>
             <span className='text-inherit'>18 december 2025</span>
@@ -271,7 +293,7 @@ export default function ScrollSPA() {
 
       {/* next */}
       <section className="bg-secondary-blue relative z-1 pb-5 font-providence-sans">
-        <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center">
+        <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center text-sm">
           <motion.strong
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +307,7 @@ export default function ScrollSPA() {
             <strong>ninongs and ninangs</strong>
             <span>barong and slacks/skirts</span>
 
-            <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-svw aspect-auto' />
+            <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-svw aspect-auto max-w-2xl' />
           </motion.div>
 
           <motion.div
@@ -301,14 +323,14 @@ export default function ScrollSPA() {
               <strong>boys:</strong> long / short sleeves polo and slacks (black, khaki, gray, white)
             </span>
 
-            <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-full aspect-auto' />
+            <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-full aspect-auto max-w-2xl' />
           </motion.div>
         </div>
       </section>
 
       {/* next */}
       <section className="bg-secondary-blue relative z-1 font-providence-sans overflow-hidden pb-7">
-        <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center relative">
+        <div className="container mx-auto px-8 flex flex-col items-center gap-6 text-primary-blue text-center relative text-sm">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
