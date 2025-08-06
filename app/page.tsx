@@ -307,7 +307,7 @@ export default function ScrollSPA() {
             <strong>ninongs and ninangs</strong>
 
             <div className="w-full text-center">
-              <span>cream/beige barong dress / barong and slacks (ninong: black shoes) or skirt</span>
+              <span>cream/beige barong dress / barong and slacks or skirt (ninong: black shoes)</span>
             </div>
 
             <Image src='/assets/barong.png' width={1024} height={768} alt="barong" className='w-full aspect-auto max-w-2xl' />
@@ -320,6 +320,7 @@ export default function ScrollSPA() {
             className='flex flex-col items-center gap-2 text-primary-blue w-svw px-2'>
             <strong>guests' dress code</strong>
             <span>
+              garden formal <br />
               please celebrate with us in vibrant colors! <br />
               (<strong>strictly no</strong> white and black/dark attire and denim pants) <br />
               please wear long dresses, flowy, floral, and festive, <br />
