@@ -324,7 +324,7 @@ export default function ScrollSPA() {
               please celebrate with us in vibrant colors! <br />
               (<strong>strictly no</strong> white and black/dark attire and denim pants) <br />
               please wear long dresses, flowy, floral, and festive, <br />
-              long / short sleeves polo and slacks (black, khaki, gray, white)
+              long/short sleeves polo and slacks (black, khaki, gray, white)
             </span>
 
             <Image src='/assets/guests.png' width={1024} height={768} alt="guests" className='w-5/6 aspect-auto max-w-2xl' />
