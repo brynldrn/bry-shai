@@ -95,7 +95,8 @@ export default function ScrollSPA() {
             <Image width={248} height={248} src='/assets/elements/heart6.gif' alt="heart" className='size-12 absolute top-17 right-5' />
           </div>
           <p className='flex flex-col items-center gap-0 text-md'>
-            <span className='text-inherit'>18 december 2025</span>
+            <span className='text-xl block mb-2 font-bold'>18 december 2025</span>
+            <span>12 noon - 5 p.m.</span>
             <a href='https://maps.app.goo.gl/vcPZBkDVYwBsyLbW6' target='_blank' className='!text-inherit !underline'>Burrow Café &ndash; Antipolo Beehouse</a>
             <span>113 Beverly Hills Avenue,</span>
             <span>Beverly Hills Subdivision, Taytay, Rizal</span>
@@ -363,6 +364,10 @@ export default function ScrollSPA() {
               but if you&rsquo;re feeling extra sweet, <br />
               a little cash would be a lovely treat... <br />
               for date nights, dreams, and maybe extra fries. <br />
+              <br />
+              <a href="https://www.myregistry.com/wedding-registry/shaira-rae-suringa-and-bryan-aldrin-quinalayo-caloocan-metro-manila/4945411/giftlist" target="_blank" className="underline block">
+                Here's our gift registry link, in case you are feeling extra generous.
+              </a>
             </span>
           </motion.div>
 
